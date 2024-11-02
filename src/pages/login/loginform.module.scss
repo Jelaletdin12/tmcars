@@ -1,0 +1,66 @@
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.formSignin {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  .formSigninHeading,
+  .checkbox {
+    margin-bottom: 30px;
+  }
+
+  .checkbox {
+    font-weight: normal;
+  }
+
+  .formControl {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+  input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.btn {
+  &.btnLg {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  &.btnPrimary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  &.btnBlock {
+    display: block;
+    width: 100%;
+  }
+}

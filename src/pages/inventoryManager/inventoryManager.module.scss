@@ -1,0 +1,87 @@
+.managerPage {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.inventoryForm {
+  //display: grid;
+  //grid-template-columns: repeat(2, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  label {
+    font-size: 20px;
+  }
+  input {
+    height: 25px;
+    font-size: 20px;
+  }
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.addButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.resetButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.addButton:hover {
+  background-color: darkgreen;
+}
+
+.resetButton:hover {
+  background-color: darkred;
+}
+
+.inventoryTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.inventoryTable th,
+.inventoryTable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.inventoryTable th {
+  background-color: #f2f2f2;
+}
