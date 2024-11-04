@@ -1,8 +1,29 @@
-# React + Vite
+# Inventory Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu taslama inwentarlary we iscileri dolandyrmagy ýeňilleşdirmek üçin işlenip düzülen programma. Admin inwentary we iscini goşmak, täzelemek, pozmak we paýnamanyň ýagdaýyny yzarlamak ýaly esasy funksiýalary ýerine ýetirip bilerler.
 
-Currently, two official plugins are available:
+## Aýratynlyklary
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Onum Gosun**: Täze önüm goşuň we ähli önüm maglumatlaryny dolandyryň.
+- **Önümiň täzelenişi**: Bar bolan önümleriň maglumatlary täzeläň.
+- **Önümiň öçürilmegi**: Islenilmeýän önümleri aňsatlyk bilen pozuň.
+- **Bir Stockanyň elýeterliligine gözegçilik**: Önümleriň häzirki status ýagdaýyny barlaň.
+- **Hasabat**: Bir stockanyň hereketleri barada hasabat dörediň.
+
+## Tehnologiýalar
+
+Bu taslamada aşakdaky tehnologiýalar ulanyldy:
+
+- **Frontend**: [React](https://reactjs.org/)
+- **Backend**: [Node.js](https://nodejs.org/) ve [Express.js](https://expressjs.com/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+
+## Gurmak Ucin
+
+Taslamaňyzy ýerli enjamyňyzda işletmek üçin şu ädimleri ýerine ýetiriň:
+
+1. Linki kopyalan:
+   ```bash
+   git clone <https://git.tmcars.info/intern/hrmanagement.git>
+
+2. Kodlari oz kompyuterinize yuklenende sonra terminal acyanyz we shu kommandany yazyanyz.
