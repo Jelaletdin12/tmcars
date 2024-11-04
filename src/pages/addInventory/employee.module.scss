@@ -1,0 +1,112 @@
+.employeePage {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  .employeeProfile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    .profileImage {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+      color: #666;
+    }
+  }
+  .inventoryContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .employeeInventory,
+  .mainInventory {
+    height: 250px;
+    width: 45%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+   
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .inventoryItem {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          border-bottom: 1px solid;
+
+          span {
+            flex: 1;
+          }
+
+          input[type="checkbox"] {
+            margin: 0 10px;
+          }
+
+          input[type="number"] {
+            width: 70px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+          }
+        }
+      }
+    }
+  }
+  .employeeInventory{
+    li{
+        border-bottom: 1px solid;
+    }
+  }
+
+  .addButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+}

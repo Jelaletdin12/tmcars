@@ -3,25 +3,31 @@ import styles from "./inventoryManager.module.scss";
 
 const InventoryManager = () => {
   const [productName, setProductName] = useState("");
-  const [productBrand, setProductBrand] = useState("");
+  const [productstatus, setProductstatus] = useState("");
   const [quantity, setQuantity] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [inventory, setInventory] = useState([
     {
       id: 1,
       name: "Acer Nitro 7",
-      brand: "Acer",
+      status: "available",
       quantity: 10,
       price: "$30000",
     },
     {
       id: 2,
       name: "Asus Rog 17",
-      brand: "Asus",
+      status: "available",
       quantity: 15,
       price: "$50000",
     },
-    { id: 3, name: "HP Rog 17", brand: "HP", quantity: 20, price: "$45000" },
+    {
+      id: 3,
+      name: "HP Rog 17",
+      status: "available",
+      quantity: 20,
+      price: "$45000",
+    },
   ]);
 
   const [errors, setErrors] = useState({});
@@ -31,7 +37,7 @@ const InventoryManager = () => {
     const newErrors = {};
 
     if (!productName) newErrors.productName = "Product name is required";
-    if (!productBrand) newErrors.productBrand = "Product brand is required";
+    if (!productstatus) newErrors.productstatus = "Product status is required";
     if (!quantity) newErrors.quantity = "Quantity is required";
     if (!productPrice) {
       newErrors.productPrice = "Product price is required";
@@ -49,13 +55,13 @@ const InventoryManager = () => {
       const newProduct = {
         id: inventory.length + 1,
         name: productName,
-        brand: productBrand,
+        status: productstatus,
         quantity: parseInt(quantity),
         price: productPrice,
       };
       setInventory([...inventory, newProduct]);
       setProductName("");
-      setProductBrand("");
+      setProductstatus("");
       setQuantity("");
       setProductPrice("");
       setErrors({});
@@ -64,7 +70,7 @@ const InventoryManager = () => {
 
   const handleResetForm = () => {
     setProductName("");
-    setProductBrand("");
+    setProductstatus("");
     setQuantity("");
     setProductPrice("");
     setErrors({});
@@ -91,14 +97,17 @@ const InventoryManager = () => {
           )}
         </div>
         <div className={styles.formGroup}>
-          <label>Product Brand:</label>
-          <input
-            type="text"
-            value={productBrand}
-            onChange={(e) => setProductBrand(e.target.value)}
-          />
-          {errors.productBrand && (
-            <p className={styles.error}>{errors.productBrand}</p>
+          <label>Product Status:</label>
+          <select
+            value={productstatus}
+            onChange={(e) => setProductstatus(e.target.value)}
+          >
+            <option value="">Select status</option>
+            <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
+          </select>
+          {errors.productstatus && (
+            <p className={styles.error}>{errors.productstatus}</p>
           )}
         </div>
         <div className={styles.formGroup}>
@@ -135,7 +144,7 @@ const InventoryManager = () => {
           <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Brand</th>
+            <th>status</th>
             <th>Quantity</th>
             <th>Price</th>
           </tr>
@@ -145,7 +154,7 @@ const InventoryManager = () => {
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.name}</td>
-              <td>{product.brand}</td>
+              <td>{product.status}</td>
               <td>{product.quantity}</td>
               <td>{product.price}</td>
             </tr>

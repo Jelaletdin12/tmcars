@@ -4,7 +4,9 @@ import { useRoutes } from "react-router-dom";
 import MainLayout from "../components/mainLayout/MainLayout";
 const Login = lazy(() => import("../pages/login/login"));
 const Home = lazy(() => import("../pages/home/index"));
-const InventoryManager = lazy(() => import("../pages/inventoryManager/index"));
+const CreateInventory = lazy(() => import("../pages/createInventory/index"));
+const AddInventory = lazy(() => import("../pages/addInventory/index"));
+const CreateEmployee = lazy(() => import("../pages/createEmployee/index"));
 
 
 export default function Router() {
@@ -19,7 +21,9 @@ export default function Router() {
       children: [
         { path: "/", element: <Home /> },
         { path: "/login", element: <Login /> },
-        { path: "/inventory-manager", element: <InventoryManager /> },
+        { path: "/inventory-manager", element: <CreateInventory /> },
+        { path: "/employee-manager", element: <AddInventory /> },
+        { path: "/create-employee", element: <CreateEmployee /> },
       ],
     },
   ]);
