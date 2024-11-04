@@ -26,4 +26,12 @@ Taslamaňyzy ýerli enjamyňyzda işletmek üçin şu ädimleri ýerine ýetiri�
    ```bash
    git clone <https://git.tmcars.info/intern/hrmanagement.git>
 
-2. Kodlari oz kompyuterinize yuklenende sonra terminal acyanyz we shu kommandany yazyanyz.
+2. Kodlari oz kompyuterinize yuklenende sonra terminal acyanyz we shu kommandalary yazyanyz.
+
+npm install
+
+Sonra Proyektin icinde nodeModules papka dorar. Ondan sonra su kommandany yazyn:
+
+npm run dev
+
+Terminalda cykan linke Ctrl+MouseClick  bassan browserde proyekt acylar.
