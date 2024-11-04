@@ -74,69 +74,67 @@ const EmployeePage = () => {
   return (
     <>
       <div className={styles.employeePage}>
-      <div className={styles.employeeProfile}>
-        <img
-          src={employeeProfile.profileImage}
-          alt="Profile"
-          className={styles.profileImage}
-        />
-        <div>
-          <h2>{employeeProfile.name}</h2>
-          <p>{employeeProfile.position}</p>
+        <div className={styles.employeeProfile}>
+          <img
+            src={employeeProfile.profileImage}
+            alt="Profile"
+            className={styles.profileImage}
+          />
+          <div>
+            <h2>{employeeProfile.name}</h2>
+            <p>{employeeProfile.position}</p>
+          </div>
         </div>
-      </div>
-      <div className={styles.inventoryContainer}>
+        <div className={styles.inventoryContainer}>
+          <div className={styles.employeeInventory}>
+            <h2>Employee Inventory</h2>
+            <ul>
+              {employeeInventory.length === 0 ? (
+                <p>No inventory assigned.</p>
+              ) : (
+                employeeInventory.map((item) => (
+                  <li key={item.id}>
+                    {item.name} - {item.quantity} units
+                  </li>
+                ))
+              )}
+            </ul>
+          </div>
 
-        <div className={styles.employeeInventory}>
-          <h2>Employee Inventory</h2>
-          <ul>
-            {employeeInventory.length === 0 ? (
-              <p>No inventory assigned.</p>
-            ) : (
-              employeeInventory.map((item) => (
+          <div className={styles.mainInventory}>
+            <h2>Main Inventory</h2>
+            <ul>
+              {inventoryList.map((item) => (
                 <li key={item.id}>
-                  {item.name} - {item.quantity} units
+                  <div className={styles.inventoryItem}>
+                    <span>
+                      {item.name} - Available: {item.quantity}
+                    </span>
+                    <input
+                      type="checkbox"
+                      checked={selectedInventory.includes(item.id)}
+                      onChange={() => handleSelectInventory(item.id)}
+                    />
+                    <input
+                      type="number"
+                      placeholder="Quantity"
+                      min="1"
+                      max={item.quantity}
+                      value={quantity[item.id] || ""}
+                      onChange={(e) =>
+                        setQuantity({ ...quantity, [item.id]: e.target.value })
+                      }
+                      disabled={!selectedInventory.includes(item.id)}
+                    />
+                  </div>
                 </li>
-              ))
-            )}
-          </ul>
+              ))}
+            </ul>
+            <button onClick={handleAddToEmployee} className={styles.addButton}>
+              Add to Employee
+            </button>
+          </div>
         </div>
-
-        <div className={styles.mainInventory}>
-          <h2>Main Inventory</h2>
-          <ul>
-            {inventoryList.map((item) => (
-              <li key={item.id}>
-                <div className={styles.inventoryItem}>
-                  <span>
-                    {item.name} - Available: {item.quantity}
-                  </span>
-                  <input
-                    type="checkbox"
-                    checked={selectedInventory.includes(item.id)}
-                    onChange={() => handleSelectInventory(item.id)}
-                  />
-                  <input
-                    type="number"
-                    placeholder="Quantity"
-                    min="1"
-                    max={item.quantity}
-                    value={quantity[item.id] || ""}
-                    onChange={(e) =>
-                      setQuantity({ ...quantity, [item.id]: e.target.value })
-                    }
-                    disabled={!selectedInventory.includes(item.id)}
-                  />
-                </div>
-                
-              </li>
-            ))}
-          </ul>
-          <button onClick={handleAddToEmployee} className={styles.addButton}>
-            Add to Employee
-          </button>
-        </div>
-      </div>
       </div>
     </>
   );

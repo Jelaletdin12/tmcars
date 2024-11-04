@@ -19,22 +19,27 @@ const AddEmployeePage = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!employeeData.first_name.trim()) newErrors.first_name = "First name is required";
+    if (!employeeData.first_name.trim())
+      newErrors.first_name = "First name is required";
     else if (employeeData.first_name.length < 2)
       newErrors.first_name = "First name must be at least 2 characters";
 
-    if (!employeeData.last_name.trim()) newErrors.last_name = "Last name is required";
+    if (!employeeData.last_name.trim())
+      newErrors.last_name = "Last name is required";
     else if (employeeData.last_name.length < 2)
       newErrors.last_name = "Last name must be at least 2 characters";
 
-    if (!employeeData.birth_date) newErrors.birth_date = "Birth date is required";
+    if (!employeeData.birth_date)
+      newErrors.birth_date = "Birth date is required";
 
     const phoneRegex = /^[0-9]{10,15}$/;
-    if (!employeeData.phone_number) newErrors.phone_number = "Phone number is required";
+    if (!employeeData.phone_number)
+      newErrors.phone_number = "Phone number is required";
     else if (!phoneRegex.test(employeeData.phone_number))
       newErrors.phone_number = "Phone number must be 10-15 digits long";
 
-    if (!employeeData.position.trim()) newErrors.position = "Position is required";
+    if (!employeeData.position.trim())
+      newErrors.position = "Position is required";
     else if (employeeData.position.length < 3)
       newErrors.position = "Position must be at least 3 characters";
 
@@ -71,9 +76,9 @@ const AddEmployeePage = () => {
         resign_date: "",
       });
       setErrors({});
-      setShowPopup(true); // Popup'u göster
+      setShowPopup(true); 
 
-      // Popup'u belirli bir süre sonra gizle
+    
       setTimeout(() => setShowPopup(false), 3000);
     }
   };
@@ -83,9 +88,7 @@ const AddEmployeePage = () => {
       <h2>Add New Employee</h2>
 
       {showPopup && (
-        <div className={styles.popup}>
-          Employee successfully created!
-        </div>
+        <div className={styles.popup}>Employee successfully created!</div>
       )}
 
       <div className={styles.formContainer}>
@@ -97,7 +100,9 @@ const AddEmployeePage = () => {
             value={employeeData.first_name}
             onChange={handleInputChange}
           />
-          {errors.first_name && <p className={styles.error}>{errors.first_name}</p>}
+          {errors.first_name && (
+            <p className={styles.error}>{errors.first_name}</p>
+          )}
         </div>
         <div className={styles.formGroup}>
           <label>Last Name:</label>
@@ -107,7 +112,9 @@ const AddEmployeePage = () => {
             value={employeeData.last_name}
             onChange={handleInputChange}
           />
-          {errors.last_name && <p className={styles.error}>{errors.last_name}</p>}
+          {errors.last_name && (
+            <p className={styles.error}>{errors.last_name}</p>
+          )}
         </div>
         <div className={styles.formGroup}>
           <label>Birth Date:</label>
@@ -117,7 +124,9 @@ const AddEmployeePage = () => {
             value={employeeData.birth_date}
             onChange={handleInputChange}
           />
-          {errors.birth_date && <p className={styles.error}>{errors.birth_date}</p>}
+          {errors.birth_date && (
+            <p className={styles.error}>{errors.birth_date}</p>
+          )}
         </div>
         <div className={styles.formGroup}>
           <label>Phone Number:</label>
@@ -128,7 +137,9 @@ const AddEmployeePage = () => {
             onChange={handleInputChange}
             placeholder="1234567890"
           />
-          {errors.phone_number && <p className={styles.error}>{errors.phone_number}</p>}
+          {errors.phone_number && (
+            <p className={styles.error}>{errors.phone_number}</p>
+          )}
         </div>
         <div className={styles.formGroup}>
           <label>Position:</label>
@@ -169,9 +180,13 @@ const AddEmployeePage = () => {
             value={employeeData.hire_date}
             onChange={handleInputChange}
           />
-          {errors.hire_date && <p className={styles.error}>{errors.hire_date}</p>}
+          {errors.hire_date && (
+            <p className={styles.error}>{errors.hire_date}</p>
+          )}
         </div>
-        <button onClick={handleAddEmployee} className={styles.addButton}>Add Employee</button>
+        <button onClick={handleAddEmployee} className={styles.addButton}>
+          Add Employee
+        </button>
       </div>
     </div>
   );

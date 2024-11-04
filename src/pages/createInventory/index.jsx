@@ -32,7 +32,6 @@ const InventoryManager = () => {
 
   const [errors, setErrors] = useState({});
 
-  // Form alanlarını doğrulama
   const validateForm = () => {
     const newErrors = {};
 

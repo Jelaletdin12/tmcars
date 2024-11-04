@@ -8,7 +8,6 @@ const CreateInventory = lazy(() => import("../pages/createInventory/index"));
 const AddInventory = lazy(() => import("../pages/addInventory/index"));
 const CreateEmployee = lazy(() => import("../pages/createEmployee/index"));
 
-
 export default function Router() {
   const routes = useRoutes([
     {
